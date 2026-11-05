@@ -1,0 +1,32 @@
+{
+  "measured_at": "2026-10-26T14:07:22.593582+00:00",
+  "machine": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "base_url": "http://127.0.0.1:63473",
+  "role": "admin",
+  "paths": [
+    "/api/orders?page=1&page_size=50",
+    "/api/acceptance/statistics"
+  ],
+  "data_volume": {
+    "elder_count": 50000,
+    "provider_count": 800,
+    "order_count": 300000
+  },
+  "concurrency": 4,
+  "requests": 24,
+  "duration_seconds": 8.835643,
+  "requests_per_second": 2.716,
+  "latency_ms": {
+    "min": 66.286,
+    "p50": 722.615,
+    "p95": 6153.504,
+    "p99": 6255.129,
+    "max": 6255.129
+  },
+  "errors": 0,
+  "lock_errors": 0,
+  "error_groups": {},
+  "conclusion": "Measured local read workload only; 2000 simultaneous users is unverified."
+}

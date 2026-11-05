@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+node_modules/
+.env
+.env.*
+*.db
+!/elderly_care.db
+*.db-wal
+*.db-shm
+uploads/
+data/
+backups/
+tests/browser-output/
+*.apk
+*.zip

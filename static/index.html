@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>邻里安养 · 社区居家养老服务系统</title>
+  <link rel="stylesheet" href="styles.css?v=20260921-register" />
+  <link rel="stylesheet" href="acceptance.css?v=20261026" />
+</head>
+<body>
+  <div id="loginRoot" class="login-root">
+    <form id="loginForm" class="login-card">
+      <div class="brand-mark login-mark">邻</div>
+      <h1>邻里安养</h1>
+      <p>社区居家养老服务系统</p>
+      <label>角色<select id="loginRole" name="role"><option value="elder">老人 / 家属</option><option value="provider">服务人员</option><option value="admin">社区管理员</option></select></label>
+      <label>账号<input id="loginUsername" name="username" autocomplete="username" required /></label>
+      <label>密码<input id="loginPassword" name="password" type="password" autocomplete="current-password" required /></label>
+      <button class="primary-button login-button" type="submit">登录</button>
+      <div class="login-secondary-actions"><button id="guestBrowse" class="text-button login-link" type="button">游客浏览</button><button id="openRegister" class="text-button login-link" type="button">注册账号</button></div>
+      <div id="loginError" class="login-error"></div>
+    </form>
+
+    <form id="registerForm" class="login-card hidden">
+      <div class="login-card-head"><button id="backToLogin" class="login-back" type="button">‹</button><strong>注册账号</strong><span></span></div>
+      <p class="login-note">仅老人 / 家属和服务人员可自行注册。注册后首次登录需先完成个人档案。</p>
+      <label>注册角色<select id="registerRole" name="role"><option value="elder">老人 / 家属</option><option value="provider">服务人员</option></select></label>
+      <label>账号<input id="registerUsername" name="username" autocomplete="username" minlength="4" maxlength="32" required /></label>
+      <label>密码<input id="registerPassword" name="password" type="password" autocomplete="new-password" minlength="8" required /></label>
+      <label>确认密码<input id="registerPasswordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required /></label>
+      <button class="primary-button login-button" type="submit">创建账号</button>
+      <div id="registerError" class="login-error"></div>
+    </form>
+
+    <form id="profileSetupForm" class="login-card profile-setup-card hidden">
+      <div class="brand-mark login-mark">邻</div>
+      <h1>完善个人档案</h1>
+      <p id="profileSetupHint">首次登录需先完成档案，保存后才能使用系统功能。</p>
+      <div id="profileSetupFields" class="profile-setup-fields"></div>
+      <button class="primary-button login-button" type="submit">保存档案并进入系统</button>
+      <button id="cancelProfileSetup" class="text-button login-cancel" type="button">退出登录</button>
+      <div id="profileSetupError" class="login-error"></div>
+    </form>
+  </div>
+  <div id="appShell" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">邻</div>
+        <div>
+          <div class="brand-name">邻里安养</div>
+          <div class="brand-subtitle">社区居家养老服务系统</div>
+        </div>
+      </div>
+      <div class="role-badge"><div class="eyebrow">当前身份</div><strong id="roleLabel">社区管理员</strong></div>
+      <nav id="mainNav" class="main-nav" aria-label="主导航"></nav>
+      <div class="sidebar-foot">
+        <div class="status-dot"></div>
+        <span>服务运行正常</span>
+        <span class="muted">v1.0.0</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb">江西省 · 青云社区 / <span id="pageCrumb">运营总览</span></div>
+          <h1 id="pageTitle">运营总览</h1>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" data-ac="inbox" title="站内通知">通知 <span id="acceptance-notification-count">0</span></button>
+          <button class="icon-button" data-action="open-notices" title="查看公告">公告 <span class="notice-count">3</span></button>
+          <div class="user-chip"><span class="avatar">邻</span><span id="userName"></span><button class="text-button" data-action="logout">退出</button></div>
+        </div>
+      </header>
+      <div id="viewRoot" class="view-root"></div>
+    </main>
+  </div>
+
+  <div id="modalRoot" class="modal-root" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js?v=20260921-register"></script>
+  <script src="acceptance.js?v=20261026"></script>
+</body>
+</html>
